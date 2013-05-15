@@ -85,7 +85,7 @@ class ImapMailbox {
 	 * Checks information about the current mailbox.
 	 *
 	 * Returns the information in an object with following properties:
-	 *	Date - current system time formatted according to » RFC2822
+	 *	Date - current system time formatted according to ï¿½ RFC2822
 	 *	Driver - protocol used to access this mailbox: POP3, IMAP, NNTP
 	 *	Mailbox - the mailbox name
 	 *	Nmsgs - number of messages in the mailbox
@@ -103,7 +103,7 @@ class ImapMailbox {
 	 * This function performs a search on the mailbox currently opened in the given IMAP stream.
 	 * For example, to match all unanswered messages sent by Mom, you'd use: "UNANSWERED FROM mom".
 	 * Searches appear to be case insensitive. This list of criteria is from a reading of the UW
-	 * c-client source code and may be incomplete or inaccurate (see also » RFC2060, section 6.4.4).
+	 * c-client source code and may be incomplete or inaccurate (see also ï¿½ RFC2060, section 6.4.4).
 	 *
 	 * criteria
 	 *	A string, delimited by spaces, in which the following keywords are allowed. Any multi-word arguments (e.g. FROM "joey smith") must be quoted. Results will match all criteria entries.
@@ -203,7 +203,7 @@ class ImapMailbox {
 	 * sequence
 	 *	A sequence of message numbers. You can enumerate desired messages with the X,Y syntax, or retrieve all messages within an interval with the X:Y syntax
 	 * flag
-	 *	The flags which you can set are \Seen, \Answered, \Flagged, \Deleted, and \Draft as defined by » RFC2060.
+	 *	The flags which you can set are \Seen, \Answered, \Flagged, \Deleted, and \Draft as defined by ï¿½ RFC2060.
 	 * 
 	 * Returns TRUE on success or FALSE on failure.
 	 */
@@ -221,7 +221,7 @@ class ImapMailbox {
 	 *  A sequence of message numbers. You can enumerate desired messages with the X,Y syntax, or retrieve all messages within an interval with the X:Y syntax
 	 * 
 	 * flag
-	 *  The flags which you can unset are "\\Seen", "\\Answered", "\\Flagged", "\\Deleted", and "\\Draft" (as defined by » RFC2060)
+	 *  The flags which you can unset are "\\Seen", "\\Answered", "\\Flagged", "\\Deleted", and "\\Draft" (as defined by ï¿½ RFC2060)
 	 * 
 	 * Returns TRUE on success or FALSE on failure.
 	 */
@@ -233,7 +233,7 @@ class ImapMailbox {
 	/*
 	 * string fetchHeader ( int $msg_number )
 	 * 
-	 * This function causes a fetch of the complete, unfiltered » RFC2822 format header of the specified message.
+	 * This function causes a fetch of the complete, unfiltered ï¿½ RFC2822 format header of the specified message.
 	 * 
 	 * msg_number
 	 *	The message number
@@ -278,7 +278,7 @@ class ImapMailbox {
 	 */
 	public function fetchOverview($sequence) {
 		$this->pingMailbox();
-		return imap_fetch_overview($this->mbox, $sequence, FT_UID);
+		return imap_fetch_overview($this->mbox, $sequence, 0);
 	}
 
 	/*
@@ -520,64 +520,64 @@ class ImapMailbox {
 /*
  * Un-Implemented IMAP Connection Functions
  */
-	// imap_alerts — Returns all IMAP alert messages that have occurred
-	// imap_errors — Returns all of the IMAP errors that have occured
-	// imap_gc — Clears IMAP cache
-	// imap_last_error — Gets the last IMAP error that occurred during this page request
-	// imap_timeout — Set or fetch imap timeout
+	// imap_alerts ï¿½ Returns all IMAP alert messages that have occurred
+	// imap_errors ï¿½ Returns all of the IMAP errors that have occured
+	// imap_gc ï¿½ Clears IMAP cache
+	// imap_last_error ï¿½ Gets the last IMAP error that occurred during this page request
+	// imap_timeout ï¿½ Set or fetch imap timeout
 
 /*
  * Un-Implemented IMAP General Functions
  */
-	// imap_mail_compose — Create a MIME message based on given envelope and body sections
-	// imap_get_quotaroot — Retrieve the quota settings per user
-	// imap_mail — Send an email message
-	// imap_thread — Returns a tree of threaded message
+	// imap_mail_compose ï¿½ Create a MIME message based on given envelope and body sections
+	// imap_get_quotaroot ï¿½ Retrieve the quota settings per user
+	// imap_mail ï¿½ Send an email message
+	// imap_thread ï¿½ Returns a tree of threaded message
 
 /*
  * Un-Implemented IMAP Mailbox Functions
  */
-	// imap_append — Append a string message to a specified mailbox
-	// imap_createmailbox — Create a new mailbox
-	// imap_deletemailbox — Delete a mailbox
-	// imap_get_quota — Retrieve the quota level settings, and usage statics per mailbox
-	// imap_getacl — Gets the ACL for a given mailbox
-	// imap_getmailboxes — Read the list of mailboxes, returning detailed information on each one
-	// imap_getsubscribed — List all the subscribed mailboxes
-	// imap_list — Read the list of mailboxes
-	// imap_listscan — Returns the list of mailboxes that matches the given text
-	// imap_lsub — List all the subscribed mailboxes
-	// imap_mail_copy — Copy specified messages to a mailbox
-	// imap_mail_move — Move specified messages to a mailbox
-	// imap_mailboxmsginfo — Get information about the current mailbox
-	// imap_num_recent — Gets the number of recent messages in current mailbox
-	// imap_renamemailbox — Rename an old mailbox to new mailbox
-	// imap_reopen — Reopen IMAP stream to new mailbox
-	// imap_set_quota — Sets a quota for a given mailbox
-	// imap_setacl — Sets the ACL for a giving mailbox
-	// imap_status — Returns status information on a mailbox
-	// imap_subscribe — Subscribe to a mailbox
-	// imap_unsubscribe — Unsubscribe from a mailbox
+	// imap_append ï¿½ Append a string message to a specified mailbox
+	// imap_createmailbox ï¿½ Create a new mailbox
+	// imap_deletemailbox ï¿½ Delete a mailbox
+	// imap_get_quota ï¿½ Retrieve the quota level settings, and usage statics per mailbox
+	// imap_getacl ï¿½ Gets the ACL for a given mailbox
+	// imap_getmailboxes ï¿½ Read the list of mailboxes, returning detailed information on each one
+	// imap_getsubscribed ï¿½ List all the subscribed mailboxes
+	// imap_list ï¿½ Read the list of mailboxes
+	// imap_listscan ï¿½ Returns the list of mailboxes that matches the given text
+	// imap_lsub ï¿½ List all the subscribed mailboxes
+	// imap_mail_copy ï¿½ Copy specified messages to a mailbox
+	// imap_mail_move ï¿½ Move specified messages to a mailbox
+	// imap_mailboxmsginfo ï¿½ Get information about the current mailbox
+	// imap_num_recent ï¿½ Gets the number of recent messages in current mailbox
+	// imap_renamemailbox ï¿½ Rename an old mailbox to new mailbox
+	// imap_reopen ï¿½ Reopen IMAP stream to new mailbox
+	// imap_set_quota ï¿½ Sets a quota for a given mailbox
+	// imap_setacl ï¿½ Sets the ACL for a giving mailbox
+	// imap_status ï¿½ Returns status information on a mailbox
+	// imap_subscribe ï¿½ Subscribe to a mailbox
+	// imap_unsubscribe ï¿½ Unsubscribe from a mailbox
 
 /*
  * Un-Implemented IMAP Message Functions
  */
-	// imap_bodystruct — Read the structure of a specified body section of a specific message
-	// imap_fetchmime — Fetch MIME headers for a particular section of the message
-	// imap_headerinfo — Read the header of the message
-	// imap_headers — Returns headers for all messages in a mailbox
-	// imap_msgno — Gets the message sequence number for the given UID
-	// imap_savebody — Save a specific body section to a file
-	// imap_uid — This function returns the UID for the given message sequence number
+	// imap_bodystruct ï¿½ Read the structure of a specified body section of a specific message
+	// imap_fetchmime ï¿½ Fetch MIME headers for a particular section of the message
+	// imap_headerinfo ï¿½ Read the header of the message
+	// imap_headers ï¿½ Returns headers for all messages in a mailbox
+	// imap_msgno ï¿½ Gets the message sequence number for the given UID
+	// imap_savebody ï¿½ Save a specific body section to a file
+	// imap_uid ï¿½ This function returns the UID for the given message sequence number
 
 /*
  * Un-Implemented IMAP Encoding Functions
  */
-	// imap_8bit — Convert an 8bit string to a quoted-printable string
-	// imap_rfc822_parse_adrlist — Parses an address string
-	// imap_rfc822_write_address — Returns a properly formatted email address given the mailbox, host, and personal info
-	// imap_utf7_decode — Decodes a modified UTF-7 encoded string
-	// imap_utf7_encode — Converts ISO-8859-1 string to modified UTF-7 text
+	// imap_8bit ï¿½ Convert an 8bit string to a quoted-printable string
+	// imap_rfc822_parse_adrlist ï¿½ Parses an address string
+	// imap_rfc822_write_address ï¿½ Returns a properly formatted email address given the mailbox, host, and personal info
+	// imap_utf7_decode ï¿½ Decodes a modified UTF-7 encoded string
+	// imap_utf7_encode ï¿½ Converts ISO-8859-1 string to modified UTF-7 text
 }
 
 class IncomingMail {
